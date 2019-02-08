@@ -9,7 +9,11 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description=
+        '''
+        Split bam file based on read groups.
+        Output filenames: {RG}.bam.
+        ''')
 parser.add_argument('filename',help="The bam filename")
 
 opts = parser.parse_args()
