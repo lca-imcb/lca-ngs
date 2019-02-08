@@ -22,3 +22,5 @@ script.py -h
 `contam_filter.py` - Given BAM alignments of same reads to target and contamination genome, 
 remove contaminant reads and perform quality filtering. Contamination is detected by 
 comparing mean mapping qualities of all aligned segments for each read.
+
+`bam_split_by_readgroup.py` - Split bam file based on read groups.
