@@ -49,16 +49,15 @@ def find_struct_seq(fname, charset):
         if set(seq) - charset == set():
             return seq
 
+    raise Exception('Structure sequence not found in file. Expected characters: '+''.join(charset))
+
 def parse_struct(struct_str, partitions):
 
     charpos = defaultdict(list)
 
     # initial collection (0-based)
-    for i, s in enumerate(struct_str):
-        charpos[s].append(i)
-
-    assert set(charpos.keys()) == set(''.join(partitions)), \
-            'Unexpected error while defining partitions'
+    for aln_position, char in enumerate(struct_str):
+        charpos[char].append(aln_position)
 
     # combine partitions
     struct_dict = dict()
